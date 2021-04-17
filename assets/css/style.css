@@ -4,12 +4,13 @@ body {
 	line-height: 1.6;
 	overflow: hidden;
 	position: fixed;
-	top: 0;
+   top: 0;
    left: 0;
    bottom: 0;
    right: 0;
 	background-color: black;
 }
+
 @font-face {
 	font-family: GothamM;
 	src: url('../css/ofont.ru_Gotham\ Pro.ttf');
@@ -18,6 +19,7 @@ body {
 	font-family: GothamR;
 	src: url('../css/14078.ttf');
 }
+  
 .menu {
 	background-color: #1D1F20;
 	position: absolute;
@@ -44,30 +46,27 @@ li {
 	display: list-item;
    text-align: -webkit-match-parent;
 }
-.menu_link {
+.menu_link_btn, .menu_link{
 	font-size: 20px;
 	font-family: GothamM;
 	color: white;
 	text-decoration: none;
 	letter-spacing: 2px;
-	margin: 15px;
+	transition: 0.1s;
+}
+.menu_link {
+	margin: 15px 19.5px;
 	display: block;
 }
-.menu_link:hover{
-	color: #ecdf89;
-	text-shadow: 0 0 2px #fdee8e;
-}
 .menu_link_btn{
-	font-size: 20px;
-	font-family: GothamM;
-	color: white;
-	text-decoration: none;
-	letter-spacing: 2px;
+	transition: 0.1s;
 }
-.menu_link_btn:hover{
+.menu_link:hover, .menu_link_btn:hover{
 	color: #ecdf89;
 	text-shadow: 0 0 2px #fdee8e;
+	padding: 15px;
 }
+	
 .link_planet{
 	font-size: 20px;
 	font-family: GothamM;
@@ -80,6 +79,7 @@ li {
 .link_planet:hover{
 	color: #ecdf89;
 	text-shadow: 0 0 2px #fdee8e;
+	padding: 7px;
 }
 .planet_list{
 	transform: scaleY(0);
@@ -93,7 +93,7 @@ li {
 }
 .arrow{
 	height: 16px;
-	margin-right: 4px;
+	margin-right: 8px;
 	margin-bottom: -1px;
 	transition: 0.2s;
 }
@@ -105,42 +105,31 @@ li {
 	transform: scaleX(1);
 	opacity: 1;
 }
-
-.poloska1{
+.poloska1, .poloska2, .poloska3{
 	position: absolute;
+	background-color: white;
+	transform: rotate(-26deg) scaleX(0);
+	z-index: 20;
+	transition: 0.2s;
+	transform-origin: right;
+}
+.poloska1{
 	width: 350px;
 	height: 3px;
-	background-color: white;
-	transform: rotate(-26deg) scaleX(0);
 	bottom: 21.5vh;
 	right: 8vw;
-	z-index: 20;
-	transition: 0.2s;
-	transform-origin: right;
 }
 .poloska2{
-	position: absolute;
 	width: 430px;
 	height: 7px;
-	background-color: white;
-	transform: rotate(-26deg) scaleX(0);
 	bottom: 35vh;
 	right: -3vw;
-	z-index: 20;
-	transition: 0.2s;
-	transform-origin: right;
 }
 .poloska3{
-	position: absolute;
 	width: 230px;
 	height: 5px;
-	background-color: white;
-	transform: rotate(-26deg) scaleX(0);
 	bottom: 29.5vh;
 	right: -3vw;
-	z-index: 20;
-	transition: 0.2s;
-	transform-origin: right;
 }
 .poloska_active{
 	transform: rotate(-26deg) scaleX(1);
@@ -150,14 +139,14 @@ li {
 .poloska_act{
 	transform: rotate(-26deg) scaleX(0);
 }
+
 header {
-	width: 100%;
+	width: 85vw;
 	margin: 0 auto;
 	height: 20vh;
 }
 .header_inner {
 	width: 100%;
-	max-width: 1300px;
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
@@ -212,6 +201,9 @@ header {
 	transform: translate(100px);
 }
 @media (max-width: 1450px){
+	header{
+		width: 90vw;
+	}
 	.logo{
 		transform: scale(0.9);
 	}
@@ -220,6 +212,7 @@ header {
 		margin: 0;
 		align-self: center;
 		margin-right: 20px;
+		margin-top: 20px;
 	}
 	.nav_menu{
 		margin: 100px 25px;
@@ -238,22 +231,28 @@ header {
 		justify-content: center;
 		align-content: center;
 	}
+	.logo img{
+		width: 200px;
+	}
 	.logo{
-		transform: scale(0.7);
-		margin: 0;
+		margin: 10px 0;
 	}
 	.menu_btn{
 		transform: scale(0.8);
 		margin: 0;
 		align-self: center;
 		margin-right: 20px;
-		margin-bottom: -10px;
+		margin-top: 22px;
 	}
 	.nav_menu{
 		margin: 100px 25px;
 	}
 	.menu_link{
+		font-size: 18px;
 		margin: 9px 15px;
+	}
+	.menu_link_btn, .link_planet{
+		font-size: 18px;
 	}
 	.poloska1{
 		right: 13vw;
@@ -265,22 +264,28 @@ header {
 		justify-content: center;
 		align-content: center;
 	}
+	.logo img{
+		width: 170px;
+	}
 	.logo{
-		transform: scale(0.5);
-		margin: -15px;
+		margin: 10px 0;
 	}
 	.menu_btn{
-		transform: scale(0.5);
+		transform: scale(0.7);
 		margin: 0;
 		align-self: center;
-		margin-bottom: -11px;
 		margin-right: 20px;
+		margin-top: 16px;
 	}
 	.nav_menu{
 		margin: 90px 25px;
 	}
 	.menu_link{
-		margin: 8px 15px;
+		font-size: 16px;
+		margin: 4px 15px;
+	}
+	.menu_link_btn, .link_planet{
+		font-size: 16px;
 	}
 	.poloska1{
 		right: 20vw;
